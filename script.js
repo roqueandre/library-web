@@ -25,8 +25,7 @@ function removeBook() {
   }
 }
 
-
-/*Create function to change read status*/ 
+/*Create function to change read status*/
 Book.prototype.changeStatus = function () {
   if (this.status === "Unread") {
     this.status = "Read";
@@ -34,7 +33,6 @@ Book.prototype.changeStatus = function () {
     this.status = "Unread";
   }
 };
-
 
 /* Create html elements */
 function buildElement() {
@@ -65,19 +63,22 @@ function buildElement() {
   statusBtn.textContent = "Status";
   statusBtn.classList.add("status-btn");
   statusBtn.addEventListener("click", function () {
-    myLibrary[myLibrary.length - 1].changeStatus();
-    statusDisplay.textContent = myLibrary[myLibrary.length - 1].status;
+    const parent = this.parentElement;
+    for (let book in myLibrary) {
+      if (parent.dataset.bookId === myLibrary[book].id) {
+        myLibrary[book].changeStatus();
+        statusDisplay.textContent = myLibrary[book].status;
+      }
+    }
   });
   newCard.appendChild(statusBtn);
 
   const removeBtn = document.createElement("button");
-  removeBtn.classList.add("remove-btn")
+  removeBtn.classList.add("remove-btn");
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", removeBook);
   newCard.appendChild(removeBtn);
 }
-
-
 
 const form = document.getElementById("bookForm");
 
@@ -94,5 +95,4 @@ form.addEventListener("submit", function (e) {
   console.log(myLibrary);
   form.reset();
 });
-
 
