@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Library</title>
+  </head>
+  <body>
+    <div class="content">
+      <header class="header">
+        <div class="header-container">
+          <div id="img-container">
+            
+          </div>
+          <p>Sair</p>
+        </div>
+      </header>
+      <aside class="form">
+        <div id="logo"><img src="img/logo.svg" alt="logo">Bookshelf</div>
+        <form action="#" id="bookForm">
+            <legend>Add a book</legend>
+            <ul>
+                <li>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </li>                
+                <li>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" required>
+                </li>
+                <li>
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" name="genre" required>
+                </li>
+            </ul>
+            <button type="submit" class="btn" id="send">Send</button>
+        </form>
+      </aside>
+      <main class="main-container">
+        <h1>My Books</h1>
+        <section class="container-items"></section>
+      </main>
+      <footer>
+        Created by Roqueandre
+        <a href="https://github.com/roqueandre">
+          <img src="/img/github.svg" width="24px" alt="github logo" />
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
