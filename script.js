@@ -5,7 +5,7 @@ function Book(title, author, genre) {
   this.title = title;
   this.author = author;
   this.genre = genre;
-  this.status = "Unread";
+  this.status = "unread";
 }
 
 /* */
@@ -27,10 +27,10 @@ function removeBook() {
 
 /*Create function to change read status*/
 Book.prototype.changeStatus = function () {
-  if (this.status === "Unread") {
-    this.status = "Read";
+  if (this.status === "unread") {
+    this.status = "read";
   } else {
-    this.status = "Unread";
+    this.status = "unread";
   }
 };
 
